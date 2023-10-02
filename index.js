@@ -2,7 +2,7 @@ import express from "express"
 import dotenv from "dotenv"
 import { studentsRouter } from "./Routers/students.js";
 import { mentorsRouter } from "./Routers/mentors.js";
-
+import cors from "cors"
 
 //confgure the environment
 dotenv.config();
@@ -12,7 +12,7 @@ const app = express();
 
 //middleware
 app.use(express.json());
-
+app.use(cors());
 
 //studers routers
 app.use("/students",studentsRouter)
